@@ -1,0 +1,35 @@
+file => new => spring starter project => 
+		.....
+		
+--------------------------------------------------------------------
+how to add jsp in project? 
+	we can create jsp file in views folder 
+	
+	ioc => where is your jsp ?
+	
+	1) let ioc know where is my views -- 
+		in ->   application.properties 
+		
+		spring.mvc.view.prefix=WEB-INF/views/
+		spring.mvc.view.suffix=.jsp
+		
+	2) add tomcat embeded jasper jar for jsp 
+		in -> pom.xml 
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+ 		</dependency>
+ 
+--------------------------------------------------------------------
+	
+task :- 
+	
+		login --> Login.jsp 	
+		<h2> Login </h2> 
+		
+		forgetpassword --> ForgetPassword.jsp 
+		<h2>ForgetPassword</h2>
+		
+		
