@@ -32,4 +32,21 @@ task :-
 		forgetpassword --> ForgetPassword.jsp 
 		<h2>ForgetPassword</h2>
 		
-		
+--------------------------------------------------------------------
+add spring boot devTools in your project 
+
+project -> right click --> spring --> edit starters / add starters -> spring boot devTools : done 
+
+--------------------------------------------------------------------
+signup --> data read --> console 
+forget password --> email ---> console 
+login --> email and password --> console 
+
+
+--------------------------------------------------------------------
+
+
+
+
+
+	
