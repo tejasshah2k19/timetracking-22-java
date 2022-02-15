@@ -45,6 +45,24 @@ login --> email and password --> console
 
 --------------------------------------------------------------------
 
+db connection 
+
+
+postgres --> java postgres driver
+			 spring jdbc [ insert update delete select ]  
+
+
+
+		--> dbname , url  port ,  12345678 - postgres   
+	
+db query--->
+
+	    --> class query 
+	    
+	    
+
+--------------------------------------------------------------------
+
 
 
 
