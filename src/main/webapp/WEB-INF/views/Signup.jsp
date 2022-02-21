@@ -9,7 +9,7 @@
 <body>
 	<h2>Signup</h2>
 
-	<form method="post" action="saveuser">
+	<form method="post" action="signup">
 		FirstName: <input type="text" name="firstName"><br> <br>
 		Email: <input type="text" name="email"><br> <br>
 		Password: <input type="password" name="password"><br> <br>

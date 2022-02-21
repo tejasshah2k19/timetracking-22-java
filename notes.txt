@@ -67,9 +67,17 @@ jstl -> tag
 
 
 
+--------------------------------------------------------------------
 
+single table crud :- 
 
+userId
+firstName
+email
+password
+roleId 
 
+admin --> addUser 
 
 
 

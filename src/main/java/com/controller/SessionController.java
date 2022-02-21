@@ -26,7 +26,7 @@ public class SessionController {
 
 	}
 
-	@RequestMapping(value="saveuser",method = RequestMethod.POST)
+	@RequestMapping(value="signup",method = RequestMethod.POST)
 	public String  saveUser(UserBean user) {
 		//fn em pwd ==> bean 
 		System.out.println(user.getFirstName());
