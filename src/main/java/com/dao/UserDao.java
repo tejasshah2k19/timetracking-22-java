@@ -20,7 +20,21 @@ public class UserDao {
 				user.getEmail(), user.getPassword(), user.getRoleId());
 	}
 
-	public List<UserBean> getAllUsers(){
-		return stmt.query("select u.*,r.roleName  from users u,role r where u.roleid = r.roleid ",new BeanPropertyRowMapper<UserBean>(UserBean.class));
+	public List<UserBean> getAllUsers() {
+
+		return stmt.query("select u.*,r.roleName  from users u,role r where u.roleid = r.roleid ",
+				new BeanPropertyRowMapper<UserBean>(UserBean.class));
+	}
+
+	public UserBean getUserByEmail(String email) {
+		UserBean dbUser = null;
+
+		try {
+			dbUser = stmt.queryForObject("select * from users where email = ? ",
+					new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { email });
+		} catch (Exception e) {
+
+		}
+		return dbUser;
 	}
 }
