@@ -152,6 +152,36 @@ assgin other developer [       ]
 
 
  --------------------------------------------------------------------	
+ signup -> password --> encrypt 
+
+bcrypt --> pom.xml --> jar 
+
+
+config -> folder --> MyConfig --> @Configuration 
+	   @Bean 
+method --> public BcryptPasswordEncoder getEncoder(){
+			return new Bcry...();
+	  }
+
+
+--> sessionController authenticate() --> login(UserBean user) //plain password email 
+
+	read user data from db search user with given email [ jsp ] 
+	dbUser [ null | init ] -> null invalid 
+	
+	not null -> 
+		now compare plain password and encrypted password 
+		bcryptPasswordEncoder.matches(user.getPassword(),dbUser.getPassword())
+	
+		if true user valid isCorrect -> true
+
+
+		if isCorrect == true 
+			home 
+		else	
+			error,invalidcredentials 
+			login 
+ -------------------------------------------------------------
 
 
 
