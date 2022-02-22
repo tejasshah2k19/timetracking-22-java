@@ -90,7 +90,68 @@ password encryption
 			<artifactId>spring-security-crypto</artifactId>
  		</dependency>
  		
- 	
+ ---------------------------------------------------------
+ 
+ user 
+userid name	role
+1	x
+2	y
+3	z
+4	a
+
+project 
+1	xyz 
+2 	def 
+3	jkl
+
+
+projecteam 
+
+userid projectid 
+2	1
+2	2
+2	3
+1	1
+3	3
+
+
+role 
+1 admin
+2 developer
+3 pm 
+4 tester 
+
+
+project list 
+
+1	xyz 	assign
+2 	def 	assign	
+3	jkl	assign 
+
+
+
+xyz project 
+
+
+current developers 
+x		revoke
+
+
+select * from users where role = developer and userid not in [ select userid from projecteam where projectid=  1 ] 
+assgin other developer [       ]
+
+
+
+
+
+
+
+
+
+
+
+
+ --------------------------------------------------------------------	
 
 
 
