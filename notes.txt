@@ -185,6 +185,38 @@ method --> public BcryptPasswordEncoder getEncoder(){
 
 
 
+forgetpassword 
+
+	email 
+	
+	db email present ? 
+	
+	otp generate --> email send --> 
+	
+	email :
+	password :
+	otp   : 
+	
+			Change Password 
+			
+ -------------------------------------------------------------			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -37,4 +37,8 @@ public class UserDao {
 		}
 		return dbUser;
 	}
+
+	public void updatePassword(UserBean user) {
+		stmt.update("update users set password = ? where email = ?",user.getPassword(),user.getEmail());
+	}
 }

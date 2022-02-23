@@ -15,6 +15,9 @@
 	<input type="submit" value="Login"> 
 
 </form>
-${error}
+${error}${msg }
+<br>
+<a href="signup">New User?</a> | 
+<a href="forgetpassword">ForgetPassword</a>
 </body>
 </html>

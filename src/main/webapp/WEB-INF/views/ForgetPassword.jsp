@@ -8,5 +8,13 @@
 </head>
 <body>
 <h2>ForgetPassword</h2>
+
+<form action="forgetpassword" method="post">
+	Email : <input type="text" name="email"><br><br>
+	<input type="submit" value="Get Me Back"/> 
+
+</form>
+${error}
+
 </body>
 </html>
