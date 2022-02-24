@@ -39,7 +39,7 @@ public class SessionController {
 	}
 
 	@PostMapping("/login")
-	public String authenticate(UserBean user, Model model) {
+	public String authenticate(UserBean user, Model model, HttpSession session) {
 
 		boolean isCorrect = false;
 		UserBean dbUser = userDao.getUserByEmail(user.getEmail());
@@ -47,6 +47,7 @@ public class SessionController {
 
 			if (bcryptPasswordEncoder.matches(user.getPassword(), dbUser.getPassword()) == true) {
 				isCorrect = true;
+				session.setAttribute("user", dbUser);// name email id role
 			}
 		}
 
@@ -54,8 +55,20 @@ public class SessionController {
 			// admin AdminDashBoard
 			// project manager
 			// developer
+			if (dbUser.getRoleId() == 1) {
+				// admin
+				return "redirect:/admindashboard";
+			} else if (dbUser.getRoleId() == 2) {
+				// pm
+				return "redirect:/projectmanagerdashboard";
 
-			return "Home";
+			} else if (dbUser.getRoleId() == 3) {
+				// developer
+				return "redirect:/developerdashboard";
+			}else {
+				return "NoRole";
+			}
+			
 		} else {
 			model.addAttribute("error", "Invalid Credentials");
 			return "Login";
@@ -99,22 +112,21 @@ public class SessionController {
 	}
 
 	@PostMapping("/updatepassword")
-	public String updatePassword(UserBean user, HttpSession session,Model model) {
+	public String updatePassword(UserBean user, HttpSession session, Model model) {
 		int otp = (int) session.getAttribute("otp");
 		String email = (String) session.getAttribute("email");
 
 		if (otp == user.getOtp() && email.equalsIgnoreCase(user.getEmail())) {
-			
-			String encPassword = bcryptPasswordEncoder.encode(user.getPassword()); 
+
+			String encPassword = bcryptPasswordEncoder.encode(user.getPassword());
 			user.setPassword(encPassword);
-			
-			
+
 			userDao.updatePassword(user);
-			
-			model.addAttribute("msg","Password Modified Please Login");
+
+			model.addAttribute("msg", "Password Modified Please Login");
 			return "Login";
-		}else {
-			model.addAttribute("error","You data mismatch with our records!!!");
+		} else {
+			model.addAttribute("error", "You data mismatch with our records!!!");
 			return "NewPassword";
 		}
 	}
