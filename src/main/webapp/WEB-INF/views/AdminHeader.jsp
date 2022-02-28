@@ -1,9 +1,11 @@
-<nav class="navbar header-navbar pcoded-header iscollapsed"
+ <nav class="navbar header-navbar pcoded-header iscollapsed"
 				header-theme="themelight1" pcoded-header-position="fixed">
 				<div class="navbar-wrapper">
 					<div class="navbar-logo" logo-theme="theme6">
-						<a href="index.html"> <img class="img-fluid"
-							src="png/logo.png" alt="Theme-Logo">
+						<a href="index.html">
+			
+							TimeTracker
+
 						</a> <a class="mobile-menu" id="mobile-collapse" href="#!"> <i
 							class="feather icon-menu icon-toggle-right"></i>
 						</a> <a class="mobile-options waves-effect waves-light"> <i
@@ -34,7 +36,8 @@
 						<ul class="nav-right">
 							<li class="header-notification">
 								<div class="dropdown-primary dropdown">
-									<div class="dropdown-toggle" data-toggle="dropdown">
+									<div class="dropdown-toggle" data-toggle="dropdown"
+										aria-expanded="false">
 										<i class="feather icon-bell"></i> <span class="badge bg-c-red">5</span>
 									</div>
 									<ul class="show-notification notification-view dropdown-menu"
@@ -81,20 +84,13 @@
 									</ul>
 								</div>
 							</li>
-							<li class="header-notification">
-								<div class="dropdown-primary dropdown">
-									<div class="displayChatbox dropdown-toggle"
-										data-toggle="dropdown">
-										<i class="feather icon-message-square"></i> <span
-											class="badge bg-c-green">3</span>
-									</div>
-								</div>
-							</li>
+
 							<li class="user-profile header-notification">
 								<div class="dropdown-primary dropdown">
-									<div class="dropdown-toggle" data-toggle="dropdown">
+									<div class="dropdown-toggle" data-toggle="dropdown"
+										aria-expanded="false">
 										<img src="jpg/avatar-4.jpg" class="img-radius"
-											alt="User-Profile-Image"> <span>John Doe</span> <i
+											alt="User-Profile-Image"> <span>${user.firstName}</span> <i
 											class="feather icon-chevron-down"></i>
 									</div>
 									<ul
@@ -112,7 +108,7 @@
 										<li><a href="auth-lock-screen.html"> <i
 												class="feather icon-lock"></i> Lock Screen
 										</a></li>
-										<li><a href="auth-sign-in-social.html"> <i
+										<li><a href="logout"> <i
 												class="feather icon-log-out"></i> Logout
 										</a></li>
 									</ul>
