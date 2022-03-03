@@ -127,11 +127,12 @@
 																	Status </label>
 																<div class="col-sm-10">
 																	<select name="statusId" class="form-control">
-																		<option value="-1">Select Status</option>
-																		<option value="1">pipeline</option>
-																		<option value="2">SRS</option>
-																		<option value="3">inProgress</option>
-																	</select>
+	
+																	<c:forEach items="${status}" var="s">
+																		<option value="${s.statusId}">${s.statusName}</option>
+																	</c:forEach>
+
+																</select>
 																</div>
 															</div>
 

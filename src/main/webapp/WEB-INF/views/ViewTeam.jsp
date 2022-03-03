@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List Projects</title>
+<title>Project Team</title>
 <jsp:include page="AllCss.jsp"></jsp:include>
 </head>
 
@@ -29,7 +29,7 @@
 									<div class="page-header-title">
 										<i class="feather icon-inbox bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>List Roles</h5>
+											<h5>View Team</h5>
 										</div>
 									</div>
 								</div>
@@ -39,7 +39,7 @@
 											<li class="breadcrumb-item"><a href="admindashboard"><i
 													class="feather icon-home"></i></a></li>
 											<li class="breadcrumb-item"><a href="#!">Projects</a></li>
-											<li class="breadcrumb-item"><a href="#!">List</a></li>
+											<li class="breadcrumb-item"><a href="#!">Team</a></li>
 										</ul>
 									</div>
 								</div>
@@ -56,8 +56,7 @@
 											<div class="col-sm-12">
 												<div class="card">
 													<div class="card-header">
-														<h5><a href="newproject">New Project</a></h5>
-
+														<h5><a href="assignmember">Assign Member</a></h5>
 													</div>
 													<div class="card-block">
 														<div class="dt-responsive table-responsive">
@@ -69,11 +68,9 @@
 																			<thead>
 																				<tr role="row">
 																					<th>Title</th>
-																					<th>Description</th>
-																					<th>Technology</th>
-																					<th>EstimatedHours</th>
-																					<th>StartDate</th>
-																					<th>CompletionDate</th>
+																					<th>Developer Name</th>
+																					<th>Email</th>
+																					<th>Role</th>
 																					<th>Status</th>
 																					<th>Action</th>
 																				</tr>
@@ -81,20 +78,20 @@
 																			<tbody>
 
 
-																				<c:forEach items="${projects}" var="p">
+																				<c:forEach items="${team}" var="t">
 																					<tr>
-																						<td>${p.title}</td>
-																						<td>${p.description}</td>
-																						<td>${p.technology}</td>
-																						<td>${p.estimatedHours}</td>
-																						<td>${p.startDate}</td>
-																						<td>${p.completionDate}</td>
-																						<td>${p.statusName}</td>
+
+																						<td>${t.title}</td>
+																						<td>${t.firstName}</td>
+																						<td>${t.email}</td>
+																						<td>${t.roleName}</td>
+																						<td>${t.active}</td>
+
 																						
 																						
 																						<td><a href="deleteproject/${p.projectId}">Delete</a>
 																							| <a href="editproject?roleId=${p.projectId}">Edit</a> |
-																							<a href="viewteam?projectId=${p.projectId}">View Team</a>
+																							<a href="viewteam/${p.projectId}">View Team</a>
 																						</td>
 																					</tr>
 																				</c:forEach>
