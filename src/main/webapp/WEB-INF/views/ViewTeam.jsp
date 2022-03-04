@@ -56,8 +56,7 @@
 											<div class="col-sm-12">
 												<div class="card">
 													<div class="card-header">
-														<h5><a href="assignmember">Assign Member</a></h5>
-													</div>
+ 													</div>
 													<div class="card-block">
 														<div class="dt-responsive table-responsive">
 															<div id="order-table_wrapper"
@@ -85,11 +84,20 @@
 																						<td>${t.firstName}</td>
 																						<td>${t.email}</td>
 																						<td>${t.roleName}</td>
-																						<td>${t.active}</td>
+																						<td>
+																							<c:if test="${t.active == 1 }">
+																								Active
+																							</c:if>
+																							<c:if test="${t.active == 0 }">
+																								InActive
+																							</c:if>
+																							
+																							
+																						</td>
 
 																						
 																						
-																						<td><a href="deleteproject/${p.projectId}">Delete</a>
+																						<td><a href="removemember?projectId=${t.projectId}&userId=${t.userId}">Revoke</a>
 																							| <a href="editproject?roleId=${p.projectId}">Edit</a> |
 																							<a href="viewteam/${p.projectId}">View Team</a>
 																						</td>

@@ -29,7 +29,7 @@
 									<div class="page-header-title">
 										<i class="feather icon-inbox bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>List Roles</h5>
+											<h5>List Projects</h5>
 										</div>
 									</div>
 								</div>
@@ -95,6 +95,8 @@
 																						<td><a href="deleteproject/${p.projectId}">Delete</a>
 																							| <a href="editproject?roleId=${p.projectId}">Edit</a> |
 																							<a href="viewteam?projectId=${p.projectId}">View Team</a>
+																							|
+																							<a href="addteammember?projectId=${p.projectId}">Add Member</a>
 																						</td>
 																					</tr>
 																				</c:forEach>

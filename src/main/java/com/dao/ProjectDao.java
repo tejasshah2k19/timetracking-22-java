@@ -24,14 +24,20 @@ public class ProjectDao {
 				project.getStartDate(), project.getCompletionDate(), project.getStatusId());
 	}
 
-	public List<ProjectBean> getAllProjects(){
-		return stmt.query("select p.*,s.statusname from project p,status s where p.statusid = s.statusid", new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class));
+	public List<ProjectBean> getAllProjects() {
+		return stmt.query("select p.*,s.statusname from project p,status s where p.statusid = s.statusid",
+				new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class));
 	}
 
-	public List<UserBean> getTeamMembers(int projectId) {
+	public ProjectBean getProjectById(int projectId) {
 
-		
+		try {
+			return stmt.queryForObject("select * from project where projectId = ? ",
+					new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class), new Object[] { projectId });
+		} catch (Exception e) {
+			System.out.println("SMW in projectDao -> getProjectById()");
+
+		}
 		return null;
 	}
-
 }

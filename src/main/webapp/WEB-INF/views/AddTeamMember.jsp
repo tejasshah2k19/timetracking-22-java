@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>New Project</title>
+<title>Add Team Member</title>
 <jsp:include page="AllCss.jsp"></jsp:include>
 </head>
 
@@ -29,7 +29,7 @@
 									<div class="page-header-title">
 										<i class="feather icon-inbox bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>New Project</h5>
+											<h5>Assign Member</h5>
 										</div>
 									</div>
 								</div>
@@ -39,7 +39,7 @@
 											<li class="breadcrumb-item"><a href="admindashboard"><i
 													class="feather icon-home"></i></a></li>
 											<li class="breadcrumb-item"><a href="#!">Project</a></li>
-											<li class="breadcrumb-item"><a href="#!">New</a></li>
+											<li class="breadcrumb-item"><a href="#!">Add Member</a></li>
 										</ul>
 									</div>
 								</div>
@@ -56,53 +56,39 @@
 											<div class="col-sm-8">
 												<div class="card">
 													<div class="card-header">
-														<h5>Add New Project</h5>
+														<h5>Add Member</h5>
 													</div>
 													<div class="card-block">
-														<h4 class="sub-title">Provide Few Project Information</h4>
-														<form action="saveproject" method="post">
+														<h4 class="sub-title">Add PM or Dev to Project</h4>
+														<form action="saveteammembers" method="post">
 
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Project
 																	Title</label>
 																<div class="col-sm-10">
-																	<input type="text" name="title" class="form-control">
+																	<input type="text"  value="${project.title }" readonly="readonly" class="form-control">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Technology</label>
 																<div class="col-sm-10">
-																	<input type="text" name="technology"
-																		class="form-control">
+																	<input type="text"  
+																		class="form-control" value="${project.technology }" readonly="readonly">
 																</div>
 															</div>
 
 
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Description</label>
-																<div class="col-sm-10">
-																	<textarea name="description" rows="5" cols="5"
-																		class="form-control" placeholder="Default textarea"></textarea>
-																</div>
-															</div>
+ 
 
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">EstimatedHours</label>
-																<div class="col-sm-10">
-																	<input type="text" name="estimatedHours"
-																		class="form-control">
-																</div>
-															</div>
-
+ 
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">StartDate</label>
 																<div class="col-sm-10">
-																	<input type="text" name="startDate"
-																		class="form-control">
+																	<input type="text"  
+																		class="form-control" readonly="readonly" value="${project.startDate}">
 																</div>
 															</div>
 
@@ -111,8 +97,8 @@
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">CompletionDate</label>
 																<div class="col-sm-10">
-																	<input type="text" name="completionDate"
-																		class="form-control">
+																	<input type="text"  
+																		class="form-control" readonly="readonly" value="${project.completionDate }">
 																</div>
 															</div>
 
@@ -122,19 +108,19 @@
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Select
-																	Status </label>
+																	Users </label>
 																<div class="col-sm-10">
-																	<select name="statusId" class="form-control">
+																	<select name="userId" class="form-control" multiple="multiple">
 	
-																	<c:forEach items="${status}" var="s">
-																		<option value="${s.statusId}">${s.statusName}</option>
+																	<c:forEach items="${users}" var="u">
+																		<option value="${u.userId}">${u.firstName}:${u.email}</option>
 																	</c:forEach>
 
 																</select>
 																</div>
 															</div>
 
-
+															<input type="hidden" name="projectId" value="${project.projectId}">
 																			
 														<input type="submit" class="btn btn-primary" value="Add Project"/>
 														<input type="reset" class="btn btn-danger" value="Clear"/>
