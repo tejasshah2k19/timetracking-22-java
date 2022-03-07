@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.bean.ProjectBean;
 import com.bean.ProjectTeamBean;
 import com.bean.UserBean;
 
@@ -42,4 +43,13 @@ public class ProjectTeamDao {
 		stmt.update("update projectteam set active = 0 where userid = ? and projectid = ? ",userId,projectId);
 	}
 
+	public List<ProjectBean> getProjectByUserId(int userId){
+		return stmt.query("select * from project where projectid in (select projectid from projectteam where userid = ? and active = 1  )",new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class),new Object[] {userId});
+	}
+	
+	
 }
+
+
+
+
