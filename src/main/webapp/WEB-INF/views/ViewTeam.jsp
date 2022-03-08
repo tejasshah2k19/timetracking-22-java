@@ -27,9 +27,9 @@
 							<div class="row align-items-end">
 								<div class="col-lg-8">
 									<div class="page-header-title">
-										<i class="feather icon-inbox bg-c-blue"></i>
+										<i class="feather icon-eye bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>View Team</h5>
+											<h5>${project.title.toUpperCase() }</h5>
 										</div>
 									</div>
 								</div>
@@ -97,9 +97,20 @@
 
 																						
 																						
-																						<td><a href="removemember?projectId=${t.projectId}&userId=${t.userId}">Revoke</a>
-																							| <a href="editproject?roleId=${p.projectId}">Edit</a> |
-																							<a href="viewteam/${p.projectId}">View Team</a>
+																						<td>
+																						
+																						<c:if test="${t.active == 1 }">
+																							<a href="removemember?projectId=${t.projectId}&userId=${t.userId}">Revoke</a>
+																						</c:if>
+																						
+																						<c:if test="${t.active == 0 }">
+																							<a href="reassignmember?projectId=${t.projectId}&userId=${t.userId}">ReAssign</a>
+																						</c:if>
+																						
+																							
+																							
+																							
+																							  
 																						</td>
 																					</tr>
 																				</c:forEach>

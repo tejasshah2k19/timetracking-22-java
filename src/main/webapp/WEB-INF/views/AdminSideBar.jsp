@@ -37,16 +37,17 @@
 					<li class=" "><a href="listroles"
 						class="waves-effect waves-dark"> <span class="pcoded-micon">
 								<i class="feather icon-feather"></i>
-						</span> <span class="pcoded-mtext">List Roles</span>
+						</span> <span class="pcoded-mtext">Roles</span>
 					</a></li>
 
 
 					<li class=" "><a href="listprojects"
 						class="waves-effect waves-dark"> <span class="pcoded-micon">
 								<i class="feather icon-feather"></i>
-						</span> <span class="pcoded-mtext">List Projects</span>
+						</span> <span class="pcoded-mtext">Projects</span>
 					</a></li>
 
+ 
 
 				</ul>
 
