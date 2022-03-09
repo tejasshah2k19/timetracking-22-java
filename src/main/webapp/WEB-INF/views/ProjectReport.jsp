@@ -57,10 +57,9 @@
 												<div class="card">
 													<div class="card-header">
 														<h5>
-															<a href="newproject">New Project</a>
 															<button type="button" class="btn btn-primary"
 																data-toggle="modal" data-target="#exampleModal">
-																Launch demo modal</button>
+																Status</button>
 														</h5>
 
 													</div>
@@ -170,8 +169,7 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save
-							changes</button>
+						<button type="submit" class="btn btn-primary">Generate</button>
 					</div>
 					</form>
 				</div>
