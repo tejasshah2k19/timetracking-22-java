@@ -224,11 +224,7 @@ solid
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description"
-	content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs.">
-<meta name="keywords"
-	content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-<meta name="author" content="colorlib">
+ 
 
 <link rel="icon"
 	href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico"
@@ -256,7 +252,11 @@ solid
 <link rel="stylesheet" href="css/chartist.css" type="text/css"
 	media="all">
 
+ 
+<link rel="stylesheet" type="text/css" href="css/component.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/pages.css">
+
 <link rel="stylesheet" type="text/css" href="css/widget.css">
 <script type="text/javascript" async=""
 	src="https://www.google-analytics.com/analytics.js"></script>

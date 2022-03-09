@@ -13,27 +13,7 @@
 
 				<ul class="pcoded-item pcoded-left-item" item-border="true"
 					item-border-style="solid" subitem-border="false">
-					<li class="pcoded-hasmenu" dropdown-icon="style1"
-						subitem-icon="style1"><a href="javascript:void(0)"
-						class="waves-effect waves-dark"> <span class="pcoded-micon">
-								<i class="feather icon-clipboard"></i>
-						</span> <span class="pcoded-mtext">Form</span>
-					</a>
-						<ul class="pcoded-submenu">
-							<li class=" "><a href="form-elements-component.html"
-								class="waves-effect waves-dark"> <span class="pcoded-mtext">Components</span>
-							</a></li>
-							<li class=" "><a href="form-elements-add-on.html"
-								class="waves-effect waves-dark"> <span class="pcoded-mtext">Add-On</span>
-							</a></li>
-							<li class=" "><a href="form-elements-advance.html"
-								class="waves-effect waves-dark"> <span class="pcoded-mtext">Advance</span>
-							</a></li>
-							<li class=" "><a href="form-validation.html"
-								class="waves-effect waves-dark"> <span class="pcoded-mtext">Validation</span>
-							</a></li>
-						</ul></li>
-
+				
 					<li class=" "><a href="listroles"
 						class="waves-effect waves-dark"> <span class="pcoded-micon">
 								<i class="feather icon-feather"></i>
@@ -47,7 +27,31 @@
 						</span> <span class="pcoded-mtext">Projects</span>
 					</a></li>
 
- 
+
+					<li class=" "><a href="myteam"
+						class="waves-effect waves-dark"> <span class="pcoded-micon">
+								<i class="feather icon-feather"></i>
+						</span> <span class="pcoded-mtext">My Team</span>
+					</a></li>
+
+	 <li class="pcoded-hasmenu" dropdown-icon="style1"
+						subitem-icon="style1"><a href="javascript:void(0)"
+						class="waves-effect waves-dark"> <span class="pcoded-micon">
+								<i class="feather icon-clipboard"></i>
+						</span> <span class="pcoded-mtext">Reports</span>
+					</a>
+						<ul class="pcoded-submenu">
+							<li class=" "><a href="projectreport?statusId=0"
+								class="waves-effect waves-dark"> <span class="pcoded-mtext">Project</span>
+							</a></li>
+							<li class=" "><a href="form-elements-add-on.html"
+								class="waves-effect waves-dark"> <span class="pcoded-mtext">Developer</span>
+							</a></li>
+							<li class=" "><a href="form-elements-advance.html"
+								class="waves-effect waves-dark"> <span class="pcoded-mtext">Task</span>
+							</a></li> 
+						</ul></li> 
+
 
 				</ul>
 

@@ -29,6 +29,10 @@ public class ProjectDao {
 				new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class));
 	}
 
+	public List<ProjectBean> getAllProjectsByStatus(int statusId) {
+		return stmt.query("select p.*,s.statusname from project p,status s where p.statusid = s.statusid and p.statusid = ? ",
+				new BeanPropertyRowMapper<ProjectBean>(ProjectBean.class),new Object[] {statusId});
+	}
 	public ProjectBean getProjectById(int projectId) {
 
 		try {
