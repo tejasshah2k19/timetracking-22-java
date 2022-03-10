@@ -60,6 +60,8 @@
 															<button type="button" class="btn btn-primary"
 																data-toggle="modal" data-target="#exampleModal">
 																Status</button>
+																
+																<button  class="btn" onclick="exportPdf()">Export</button>
 														</h5>
 
 													</div>
@@ -164,7 +166,6 @@
 									</select>
 								</div>
 							</div>
-						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
@@ -175,5 +176,28 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			function exportPdf() {
+				const element = document.getElementById('listProjects');
+				var opt = {
+					margin : 1,
+					filename : 'Report.pdf',
+					image : {
+						type : 'jpeg',
+						quality : 0.98
+					},
+					html2canvas : {
+						scale : 1
+					},
+					jsPDF : {
+						unit : 'in',
+						format : 'letter',
+						orientation : 'landscape'
+					}
+				};
+
+				html2pdf().set(opt).from(element).save();
+			}
+		</script>
 </body>
 </html>

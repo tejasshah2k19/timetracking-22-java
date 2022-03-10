@@ -27,6 +27,7 @@
 	<script src="js/vertical-layout.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/crm-dashboard.min.js"></script>
 	<script type="text/javascript" src="js/script.min.js"></script>
+	<script type="text/javascript" src="js/html2pdf.js"></script>
 
 	<script async=""
 		src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"

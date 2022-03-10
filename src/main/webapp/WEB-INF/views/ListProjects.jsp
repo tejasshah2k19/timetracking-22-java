@@ -97,6 +97,9 @@
 																							<a href="viewteam?projectId=${p.projectId}">View Team</a>
 																							|
 																							<a href="addteammember?projectId=${p.projectId}">Add Member</a>
+																							|
+																							<a href="viewtask?projectId=${p.projectId}">Task</a>
+																							
 																						</td>
 																					</tr>
 																				</c:forEach>
