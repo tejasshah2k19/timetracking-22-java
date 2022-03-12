@@ -26,6 +26,13 @@
 								<i class="feather icon-feather"></i>
 						</span> <span class="pcoded-mtext">Projects</span>
 					</a></li>
+					
+					
+					<li class=""><a href="modules"
+						class="waves-effect waves-dark"> <span class="pcoded-micon">
+								<i class="feather icon-feather"></i>
+						</span> <span class="pcoded-mtext">Modules</span>
+					</a></li>
 
 
 					<li class=" "><a href="myteam"
