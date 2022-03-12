@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List Modules</title>
+<title>List Task</title>
 <jsp:include page="AllCss.jsp"></jsp:include>
 </head>
 
@@ -29,7 +29,7 @@
 									<div class="page-header-title">
 										<i class="feather icon-inbox bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>List Modules</h5>
+											<h5>List Task</h5>
 										</div>
 									</div>
 								</div>
@@ -38,7 +38,7 @@
 										<ul class=" breadcrumb breadcrumb-title">
 											<li class="breadcrumb-item"><a href="admindashboard"><i
 													class="feather icon-home"></i></a></li>
-											<li class="breadcrumb-item"><a href="#!">Modules</a></li>
+											<li class="breadcrumb-item"><a href="#!">Task</a></li>
 											<li class="breadcrumb-item"><a href="#!">List</a></li>
 										</ul>
 									</div>
@@ -56,7 +56,7 @@
 											<div class="col-sm-12">
 												<div class="card">
 													<div class="card-header">
-														<h5><a href="newmodule">New Module</a></h5>
+														<h5><a href="newtask">New Task</a></h5>
 
 													</div>
 													<div class="card-block">
@@ -65,15 +65,15 @@
 																class="dataTables_wrapper dt-bootstrap4">
 																<div class="row">
 																	<div class="col-xs-12 col-sm-12">
-																		<table id="listmodules" class="table table-striped">
+																		<table id="listProjects" class="table table-striped">
 																			<thead>
 																				<tr role="row">
-																					<th>Project</th>
+																					<th>ProjectName</th>
 																					<th>ModuleName</th>
 																					<th>Description</th>
 																					<th>EstimatedMinutes</th>
-																					<th>StartDate</th>
 																					<th>Status</th>
+																					<th>StartDate</th>
 																					<th>TotalUtilizedMinutes</th>
 																					<th>Action</th>
 																				</tr>
@@ -81,19 +81,25 @@
 																			<tbody>
 
 
-																				<c:forEach items="${modules}" var="m">
+																				<c:forEach items="${task}" var="t">
 																					<tr>
-																						<td>${m.title}</td>
-																						<td>${m.moduleName}</td>
-																						<td>${m.description}</td>
-																						<td>${m.estimatedMinutes}</td>
-																						<td>${m.startDate}</td>
-																						<td>${m.statusName}</td>
-																						<td>${m.totalUtilMinutes}</td>
+																						<td>${t.title}</td>
+																						<td>${t.moduleName}</td>
+																						<td>${t.description}</td>
+																						<td>${t.estimatedHours}</td>
+																						<td>${t.statusName}</td>
+																						<td>${t.startDate}</td>
+																						<td>${t.totalUtilMinutes}</td>
 																						
 																						
-																						<td><a href="deletemodule?moduleId=${m.moduleId}">Delete</a>
-																							| <a href="editmodule?moduleId=${m.moduleId}">Edit</a>
+																						<td><a href="deleteproject/${p.projectId}">Delete</a>
+																							| <a href="editproject?roleId=${p.projectId}">Edit</a> |
+																							<a href="viewteam?projectId=${p.projectId}">View Team</a>
+																							|
+																							<a href="addteammember?projectId=${p.projectId}">Add Member</a>
+																							|
+																							<a href="viewtask?projectId=${p.projectId}">Task</a>
+																							
 																						</td>
 																					</tr>
 																				</c:forEach>
@@ -138,7 +144,7 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('#listmodules').DataTable();
+				$('#listProjects').DataTable();
 			});
 		</script>
 </body>

@@ -44,8 +44,12 @@ public class ModuleDao {
 	public void updateModule(ModuleBean module) {
 
 		stmt.update(
-				"update  module set modulename = ?   , description = ? , estimatedminutes = ? ,statusid = ? , startdate = ? , totalutilminutes = ? where moduleid = ? ",
+				"update  module set modulename = ?   , description = ? , estimatedminutes = ? ,statusid = ? , startdate = ? , totalutilminutes = ?  where moduleid = ? ",
 				 module.getModuleName(), module.getDescription(), module.getEstimatedMinutes(),
 				module.getStatusId(), module.getStartDate(), module.getTotalUtilMinutes(),module.getModuleId());
+	}
+	
+	public void deleteModule(int moduleId) {
+		stmt.update("delete from module where moduleid = ? ",moduleId);
 	}
 }

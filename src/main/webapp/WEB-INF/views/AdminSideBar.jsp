@@ -13,7 +13,7 @@
 
 				<ul class="pcoded-item pcoded-left-item" item-border="true"
 					item-border-style="solid" subitem-border="false">
-				
+
 					<li class=" "><a href="listroles"
 						class="waves-effect waves-dark"> <span class="pcoded-micon">
 								<i class="feather icon-feather"></i>
@@ -26,22 +26,28 @@
 								<i class="feather icon-feather"></i>
 						</span> <span class="pcoded-mtext">Projects</span>
 					</a></li>
-					
-					
-					<li class=""><a href="modules"
-						class="waves-effect waves-dark"> <span class="pcoded-micon">
-								<i class="feather icon-feather"></i>
+
+
+					<li class=""><a href="modules" class="waves-effect waves-dark">
+							<span class="pcoded-micon"> <i
+								class="feather icon-feather"></i>
 						</span> <span class="pcoded-mtext">Modules</span>
 					</a></li>
 
-
-					<li class=" "><a href="myteam"
-						class="waves-effect waves-dark"> <span class="pcoded-micon">
-								<i class="feather icon-feather"></i>
+					<li class=""><a href="tasks" class="waves-effect waves-dark">
+							<span class="pcoded-micon"> <i
+								class="feather icon-feather"></i>
+						</span> <span class="pcoded-mtext">Tasks</span>
+					</a></li>
+					
+					
+					<li class=" "><a href="myteam" class="waves-effect waves-dark">
+							<span class="pcoded-micon"> <i
+								class="feather icon-feather"></i>
 						</span> <span class="pcoded-mtext">My Team</span>
 					</a></li>
 
-	 <li class="pcoded-hasmenu" dropdown-icon="style1"
+					<li class="pcoded-hasmenu" dropdown-icon="style1"
 						subitem-icon="style1"><a href="javascript:void(0)"
 						class="waves-effect waves-dark"> <span class="pcoded-micon">
 								<i class="feather icon-clipboard"></i>
@@ -56,8 +62,8 @@
 							</a></li>
 							<li class=" "><a href="form-elements-advance.html"
 								class="waves-effect waves-dark"> <span class="pcoded-mtext">Task</span>
-							</a></li> 
-						</ul></li> 
+							</a></li>
+						</ul></li>
 
 
 				</ul>

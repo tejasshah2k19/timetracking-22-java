@@ -5,12 +5,24 @@ public class TaskBean {
 	int taskId;
 	int moduleId;
 	int projectId;
-	String title;
+	String taskTitle;
 	String priority;
 	String description;
 	int statusId;
 	int estimatedMinutes;
 	int totlaUtilMinutes;
+
+	String statusName;
+	String moduleName;
+	String title;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	public int getTaskId() {
 		return taskId;
@@ -36,12 +48,28 @@ public class TaskBean {
 		this.projectId = projectId;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getTaskTitle() {
+		return taskTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTaskTitle(String taskTitle) {
+		this.taskTitle = taskTitle;
+	}
+
+	public String getStatusName() {
+		return statusName;
+	}
+
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+
+	public String getModuleName() {
+		return moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
 	}
 
 	public String getPriority() {

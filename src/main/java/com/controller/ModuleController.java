@@ -60,5 +60,12 @@ public class ModuleController {
 	}
 	
 	
+	@GetMapping("/deletemodule")
+	public String deleteModule(@RequestParam("moduleId") int moduleId,Model model) {
+		moduleDao.deleteModule(moduleId);
+		return "redirect:/modules";
+		
+	}
+	
 }
 
