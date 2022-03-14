@@ -109,6 +109,18 @@ public class SessionController {
 		System.out.println(user.getFirstName());
 		System.out.println(user.getEmail());
 		System.out.println(user.getPassword());
+		
+		String plainPassword = user.getPassword(); 
+		String encPassword = bcryptPasswordEncoder.encode(plainPassword);//10 
+		System.out.println(encPassword);
+		user.setPassword(encPassword);
+
+		user.setRoleId(3);//developer 
+		
+		
+		userDao.addUser(user);
+		
+		
 		return "Login";
 	}
 

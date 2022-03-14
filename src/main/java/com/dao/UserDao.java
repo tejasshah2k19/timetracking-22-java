@@ -25,6 +25,12 @@ public class UserDao {
 		return stmt.query("select u.*,r.roleName  from users u,role r where u.roleid = r.roleid ",
 				new BeanPropertyRowMapper<UserBean>(UserBean.class));
 	}
+	
+	public List<UserBean> getAllDevelopers() {
+
+		return stmt.query("select u.*,r.roleName  from users u,role r where u.roleid = r.roleid and u.roleid = 3 ",
+				new BeanPropertyRowMapper<UserBean>(UserBean.class));
+	}
 
 	public UserBean getUserByEmail(String email) {
 		UserBean dbUser = null;
