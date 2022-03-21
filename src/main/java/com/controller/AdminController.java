@@ -28,9 +28,14 @@ public class AdminController {
 
 		int totalUserCount = userDao.getAllUsers().size();
 		int totalDeveloperCount = userDao.getAllDevelopers().size();
+		int totalOnGoingProject = projectDao.getAllProjectsByStatus(1).size();
+		int totalpipelineProject = projectDao.getAllProjectsByStatus(3).size();
 		
 		model.addAttribute("totalUserCount", totalUserCount);
 		model.addAttribute("totalDeveloperCount",totalDeveloperCount);
+		model.addAttribute("totalOnGoingProject",totalOnGoingProject);
+		model.addAttribute("totalpipelineProject",totalpipelineProject);
+		
 		return "AdminDashboard";
 	}
 

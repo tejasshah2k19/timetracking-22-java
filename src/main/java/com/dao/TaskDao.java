@@ -16,8 +16,8 @@ public class TaskDao {
 	@Autowired
 	JdbcTemplate stmt;
 	
-	public void addTask() {
-		
+	public void addTask(TaskBean task) {
+		stmt.update("insert into task (moduleid,projectid,tasktitle,priority,description,statusid,estimatedminutes,totalutilminutes) values (?,?,?,?,?,?,?,?)",task.getModuleId(),task.getProjectId(),task.getTaskTitle(),task.getPriority(),task.getDescription(),task.getStatusId(),task.getEstimatedMinutes(),0); 
 	}
 	
 	public List<TaskBean> getAllTask(){

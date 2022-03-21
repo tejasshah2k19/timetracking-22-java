@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bean.UserBean;
 import com.dao.UserDao;
+import com.service.EmailService;
 
 @Controller
 public class SessionController {
 
 	@Autowired
 	UserDao userDao;
+
+	@Autowired
+	EmailService emailService;
 
 	@Autowired
 	BCryptPasswordEncoder bcryptPasswordEncoder;
@@ -66,10 +70,10 @@ public class SessionController {
 			} else if (dbUser.getRoleId() == 3) {
 				// developer
 				return "redirect:/developerdashboard";
-			}else {
+			} else {
 				return "NoRole";
 			}
-			
+
 		} else {
 			model.addAttribute("error", "Invalid Credentials");
 			return "Login";
@@ -97,7 +101,7 @@ public class SessionController {
 			model.addAttribute("msg", "Otp is generated and sent to your email!!!");
 			System.out.println("your otp is => " + otp);
 			/// send email to user
-
+			emailService.sendEmailForForgetPassword(user.getEmail(), otp+"");
 			return "NewPassword";
 		}
 
@@ -109,18 +113,16 @@ public class SessionController {
 		System.out.println(user.getFirstName());
 		System.out.println(user.getEmail());
 		System.out.println(user.getPassword());
-		
-		String plainPassword = user.getPassword(); 
-		String encPassword = bcryptPasswordEncoder.encode(plainPassword);//10 
+
+		String plainPassword = user.getPassword();
+		String encPassword = bcryptPasswordEncoder.encode(plainPassword);// 10
 		System.out.println(encPassword);
 		user.setPassword(encPassword);
 
-		user.setRoleId(3);//developer 
-		
-		
+		user.setRoleId(3);// developer
+
 		userDao.addUser(user);
-		
-		
+
 		return "Login";
 	}
 
@@ -144,13 +146,11 @@ public class SessionController {
 		}
 	}
 
-	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		session.invalidate(); 
+		session.invalidate();
 		return "redirect:/login";
-		
+
 	}
-	
-	
+
 }

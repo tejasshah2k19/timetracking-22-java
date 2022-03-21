@@ -13,26 +13,10 @@
 						</a>
 					</div>
 					<div class="navbar-container container-fluid">
-						<ul class="nav-left">
-							<li class="header-search">
-								<div class="main-search morphsearch-search">
-									<div class="input-group">
-										<span class="input-group-prepend search-close"> <i
-											class="feather icon-x input-group-text"></i>
-										</span> <input type="text" class="form-control"
-											placeholder="Enter Keyword"> <span
-											class="input-group-append search-btn"> <i
-											class="feather icon-search input-group-text"></i>
-										</span>
-									</div>
-								</div>
-							</li>
-							<li><a href="#!"
-								onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()"
-								class="waves-effect waves-light"> <i
-									class="full-screen feather icon-maximize"></i>
-							</a></li>
-						</ul>
+						<!-- <ul class="nav-left">
+							 
+							 
+						</ul> -->
 						<ul class="nav-right">
 							<li class="header-notification">
 								<div class="dropdown-primary dropdown">
@@ -42,12 +26,12 @@
 									</div>
 									<ul class="show-notification notification-view dropdown-menu"
 										data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-										<li>
+										<!-- <li>
 											<h6>Notifications</h6> <label class="label label-danger">New</label>
-										</li>
+										</li> -->
 										<li>
 											<div class="media">
-												<img class="img-radius" src="jpg/avatar-4.jpg"
+												<img class="img-radius" src="jpg/dummyuser.jpg"
 													alt="Generic placeholder image">
 												<div class="media-body">
 													<h5 class="notification-user">John Doe</h5>
