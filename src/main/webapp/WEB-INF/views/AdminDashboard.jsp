@@ -1,3 +1,5 @@
+<%@page import="com.bean.ProjectBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,7 +25,8 @@
 
 
 			<jsp:include page="AdminHeader.jsp"></jsp:include>
-
+<!-- 		    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+ -->
 
 
 
@@ -51,7 +54,7 @@
 											<li class="breadcrumb-item"><a href="index.html"><i
 													class="feather icon-home"></i></a></li>
 											<li class="breadcrumb-item"><a href="#!">Dashboard
-													CRM</a></li>
+													</a></li>
 										</ul>
 									</div>
 								</div>
@@ -78,7 +81,7 @@
 															</div>
 														</div>
 														<p class="m-b-0 text-white">
-															<span class="label label-danger m-r-10"></span> 
+															<span class="label label-danger m-r-10"></span>
 														</p>
 													</div>
 												</div>
@@ -96,7 +99,10 @@
 															</div>
 														</div>
 														<p class="m-b-0 text-white">
-															<span class="label label-primary m-r-10"><!-- +12% --></span><!-- From
+															<span class="label label-primary m-r-10">
+																<!-- +12% -->
+															</span>
+															<!-- From
 															Previous Month -->
 														</p>
 													</div>
@@ -115,7 +121,7 @@
 															</div>
 														</div>
 														<p class="m-b-0 text-white">
-															<span class="label label-success m-r-10"></span> 
+															<span class="label label-success m-r-10"></span>
 														</p>
 													</div>
 												</div>
@@ -133,7 +139,10 @@
 															</div>
 														</div>
 														<p class="m-b-0 text-white">
-															<span class="label label-warning m-r-10"><!-- +52% --></span><!-- From
+															<span class="label label-warning m-r-10">
+																<!-- +52% -->
+															</span>
+															<!-- From
 															Previous Month -->
 														</p>
 													</div>
@@ -141,11 +150,11 @@
 											</div>
 
 
-											 
-											 
-											 
-											 
-											 
+
+
+
+
+
 
 
 
@@ -162,7 +171,23 @@
 
 
 										</div>
+		
+		
+										<!-- chart -->
+										<div class="row">
+										<div class="col-xl-6 col-md-6">
+												<div class="card prod-p-card">
+													<div class="card-body">
+														
+ 
+ 															    <canvas id="myChart" width="400" height="400"></canvas>
+ 															
 
+
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -178,7 +203,66 @@
 
 
 	<jsp:include page="AllJs.jsp"></jsp:include>
+	<script type="text/javascript" src="js/chart.js"></script>
 
+	<%
+		
+		List<ProjectBean> projects = (List<ProjectBean>)request.getAttribute("projects");
+	
+	%>
+ <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            
+        	labels: [ 
+    			<% for(ProjectBean p:projects){%>
+    				'<%=p.getTitle()%>',
+    			
+    			<%}%>
+        		
+        	],
+            
+            datasets: [{
+                label: 'Projects-Hours',
+                data: [ 
+                	<% for(ProjectBean p:projects){%>
+    				<%=p.getEstimatedHours()%>,
+    			
+    			<%}%>
+        			
+                	
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+     
 	<!-- Mirrored from colorlib.com/polygon/admindek/default/dashboard-crm.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:08:32 GMT -->
 </body>
 

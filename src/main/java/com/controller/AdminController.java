@@ -1,11 +1,14 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bean.ProjectBean;
 import com.dao.ProjectDao;
 import com.dao.StatusDao;
 import com.dao.UserDao;
@@ -31,10 +34,14 @@ public class AdminController {
 		int totalOnGoingProject = projectDao.getAllProjectsByStatus(1).size();
 		int totalpipelineProject = projectDao.getAllProjectsByStatus(3).size();
 		
+		List<ProjectBean>  projects = projectDao.getAllProjects();
+		
 		model.addAttribute("totalUserCount", totalUserCount);
 		model.addAttribute("totalDeveloperCount",totalDeveloperCount);
 		model.addAttribute("totalOnGoingProject",totalOnGoingProject);
 		model.addAttribute("totalpipelineProject",totalpipelineProject);
+		model.addAttribute("projects",projects);
+		
 		
 		return "AdminDashboard";
 	}
