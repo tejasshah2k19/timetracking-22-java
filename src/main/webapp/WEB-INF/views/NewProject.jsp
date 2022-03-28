@@ -101,7 +101,7 @@
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">StartDate</label>
 																<div class="col-sm-10">
-																	<input type="text" name="startDate"
+																	<input type="date" name="startDate"
 																		class="form-control">
 																</div>
 															</div>
@@ -111,7 +111,7 @@
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">CompletionDate</label>
 																<div class="col-sm-10">
-																	<input type="text" name="completionDate"
+																	<input type="date" name="completionDate"
 																		class="form-control">
 																</div>
 															</div>
