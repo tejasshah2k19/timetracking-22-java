@@ -69,7 +69,9 @@
 
 																	<select name="projectId" id="projectId"
 																		class="form-control" onchange="loadModules()">
+																	
 																		<option value="-1">Select Project</option>
+																	
 																		<c:forEach items="${projects}" var="p">
 																			<option value="${p.projectId}">${p.title}</option>
 																		</c:forEach>
@@ -197,7 +199,11 @@
 			
 			function loadModules(){
 				let projectId = $("#projectId")[0].value 
-				 $.get("getmodulesbyproject",{projectId:projectId}).done(function(data){
+				
+				
+				$("#moduleId").empty(); 
+				
+				$.get("getmodulesbyproject",{projectId:projectId}).done(function(data){
 						console.log(data); 
 						console.log(data[0]); 
                         for(let i=0;i<data.length;i++){ 
