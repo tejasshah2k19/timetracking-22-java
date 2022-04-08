@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.TaskBean;
 import com.dao.ModuleDao;
@@ -54,4 +55,16 @@ public class TaskController {
 		return "redirect:/tasks";
 	}
 
+	@GetMapping("/viewTaskByProject")
+	public String viewTaskByProject(@RequestParam("projectId") int projectId,Model model) {
+		model.addAttribute("task",taskDao.getAllTaskByProject(projectId));
+		return "ListTask";
+
+	}
+	
+	@GetMapping("taskbymodule")
+	public String taskByModule(@RequestParam("moduleId") int moduleId,Model model) {
+		model.addAttribute("task",taskDao.getAllTaskByModule(moduleId));
+		return "ListTask";
+	}
 }

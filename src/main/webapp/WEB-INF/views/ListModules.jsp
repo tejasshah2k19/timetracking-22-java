@@ -84,7 +84,7 @@
 																				<c:forEach items="${modules}" var="m">
 																					<tr>
 																						<td>${m.title}</td>
-																						<td>${m.moduleName}</td>
+																						<td><a href="taskbymodule?moduleId=${m.moduleId}">${m.moduleName}</a></td>
 																						<td>${m.description}</td>
 																						<td>${m.estimatedMinutes}</td>
 																						<td>${m.startDate}</td>

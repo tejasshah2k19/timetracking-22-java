@@ -83,7 +83,7 @@
 
 																				<c:forEach items="${projects}" var="p">
 																					<tr>
-																						<td>${p.title}</td>
+																						<td><a href="modulebyproject?projectId=${p.projectId}">${p.title}</a></td>
 																						<td>${p.description}</td>
 																						<td>${p.technology}</td>
 																						<td>${p.estimatedHours}</td>
@@ -98,7 +98,7 @@
 																							|
 																							<a href="addteammember?projectId=${p.projectId}">Add Member</a>
 																							|
-																							<a href="viewtask?projectId=${p.projectId}">Task</a>
+																							<a href="viewTaskByProject?projectId=${p.projectId}">Task</a>
 																							
 																						</td>
 																					</tr>

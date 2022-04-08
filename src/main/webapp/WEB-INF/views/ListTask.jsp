@@ -70,11 +70,11 @@
 																				<tr role="row">
 																					<th>ProjectName</th>
 																					<th>ModuleName</th>
+																					<th>Task</th>
 																					<th>Description</th>
 																					<th>EstimatedMinutes</th>
 																					<th>Status</th>
-																					<th>StartDate</th>
-																					<th>TotalUtilizedMinutes</th>
+ 																					<th>TotalUtilizedMinutes</th>
 																					<th>Action</th>
 																				</tr>
 																			</thead>
@@ -85,11 +85,11 @@
 																					<tr>
 																						<td>${t.title}</td>
 																						<td>${t.moduleName}</td>
+																						<td>${t.taskTitle}</td>
 																						<td>${t.description}</td>
-																						<td>${t.estimatedHours}</td>
+																						<td>${t.estimatedMinutes}</td>
 																						<td>${t.statusName}</td>
-																						<td>${t.startDate}</td>
-																						<td>${t.totalUtilMinutes}</td>
+ 																						<td>${t.totlaUtilMinutes}</td>
 																						
 																						
 																						<td><a href="deleteproject/${p.projectId}">Delete</a>

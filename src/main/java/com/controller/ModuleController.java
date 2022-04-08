@@ -72,24 +72,16 @@ public class ModuleController {
 	}
 
 //	@GetMapping("/getmodulesbyproject")
-	@RequestMapping(value = "/getmodulesbyproject",method = RequestMethod.GET,  produces="application/json")
+	@RequestMapping(value = "/getmodulesbyproject", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public List<ModuleBean> getModulesByProject(@RequestParam("projectId") int projectId) {
 		System.out.println("get all modules by project........");
 		return moduleDao.getAllModulesByProjectId(projectId);
 	}
+
+	@GetMapping("/modulebyproject")
+	public String moduleByProject(@RequestParam("projectId") int projectId, Model model) {
+		model.addAttribute("modules", moduleDao.getAllModulesByProjectId(projectId));
+		return "ListModules";
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
