@@ -41,4 +41,15 @@ public class TaskDao {
 
 	}
 
+	public List<TaskBean> getTaskByDeveloper(int userId, int projectId) {
+		return stmt.query(
+				"select t.*,p.title  from task t,projectteam pt,project p  where pt.projectid = t.projectid and pt.userid = ? and pt.projectid  = ? and pt.projectid = p.projectid ",
+				new BeanPropertyRowMapper<TaskBean>(TaskBean.class), new Object[] { userId, projectId });
+	}
+
+	public TaskBean getTaskById(int taskId) {
+		return stmt.queryForObject("select t.* from task  t,status s  where taskid = ? and t.statusid  = s.statusid ",
+				new BeanPropertyRowMapper<TaskBean>(TaskBean.class), new Object[] { taskId });
+	}
+
 }
