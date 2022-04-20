@@ -201,8 +201,18 @@ forgetpassword
 			
  -------------------------------------------------------------			
 
+file uploading 
+
+form --> text / file [ binary ] 
 
 
+1) 
+form -> method = POST , encType="multipart/form-data"
+
+2)
+pom.xml 
+	commons file uploading 
+	commons io 
 
 
 

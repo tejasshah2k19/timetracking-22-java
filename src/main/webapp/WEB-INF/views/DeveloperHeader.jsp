@@ -89,7 +89,7 @@
 								<div class="dropdown-primary dropdown">
 									<div class="dropdown-toggle" data-toggle="dropdown"
 										aria-expanded="false">
-										<img src="jpg/avatar-4.jpg" class="img-radius"
+										<img src="${user.profilePic}" class="img-radius"
 											alt="User-Profile-Image"> <span>${user.firstName}</span> <i
 											class="feather icon-chevron-down"></i>
 									</div>
@@ -99,8 +99,8 @@
 										<li><a href="#!"> <i class="feather icon-settings"></i>
 												Settings
 										</a></li>
-										<li><a href="#"> <i class="feather icon-user"></i>
-												Profile
+										<li><a href="uploadprofile"> <i class="feather icon-user"></i>
+												Change Profile Pic
 										</a></li>
 										<li><a href="email-inbox.html"> <i
 												class="feather icon-mail"></i> My Messages
